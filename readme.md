@@ -1,6 +1,8 @@
+![](./kielip.svg)
+
 # Kielip: a clipboard manager
 
-![](./kielip.png)
+![](./screenshot.png)
 
 Kielip is a clipboard manager written in rust, using the druid gui toolkit. At the moment only tested on Linux. This software is release under the BSD license, use at your own risk.
 
@@ -41,3 +43,5 @@ Example config file:
 ```
 
 The boolean in the tuple determines if the action is active or not. Intuitively, only active actions are effective.
+
+<a href="https://www.freepik.com/vectors/business">Business vector created by macrovector - www.freepik.com</a>

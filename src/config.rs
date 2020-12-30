@@ -56,7 +56,6 @@ impl Config {
         } else {
             Default::default()
         };
-        dbg!(&result);
         result
     }
     pub fn max_history(self: &Config) -> usize {
