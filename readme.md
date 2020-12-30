@@ -44,4 +44,4 @@ Example config file:
 
 The boolean in the tuple determines if the action is active or not. Intuitively, only active actions are effective.
 
-<a href="https://www.freepik.com/vectors/business">Business vector created by macrovector - www.freepik.com</a>
+<a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a>
