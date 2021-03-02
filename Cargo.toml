@@ -1,6 +1,7 @@
 [package]
 name = "kielip"
-version = "0.1.0"
+description = "Clipboard manager."
+version = "0.2.0"
 authors = ["Kaiyin Zhong <kindlychung@gmai.com>"]
 edition = "2018"
 
@@ -15,3 +16,17 @@ once_cell = "1.5.2"
 regex = "1.4.2"
 rand = "0.8.0"
 xshell = "0.1.8"
+
+[package.metadata.bundle]
+name = "Kielip"
+identifier = "com.github.kindlychung.kielip"
+icon = [ "128x128@2x.png", "128x128.png", "16x16@2x.png", "16x16.png", "256x256@2x.png", "256x256.png", "32x32@2x.png", "32x32.png", "64x64@2x.png", "64x64.png" ]
+version = "0.2.0"
+# resources = ["assets", "images/**/*.png", "secrets/public_key.txt"]
+copyright = "Copyright (c) 2021 Kaiyin Zhong. All rights reserved."
+category = "Utility"
+short_description = "Clipboard manager."
+long_description = """
+Kielip is a clipboard manager written in Rust.
+"""
+deb_depends = ["zenity", "neovim-qt", "libgtk-3-dev"]

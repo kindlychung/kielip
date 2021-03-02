@@ -51,7 +51,10 @@ impl Config {
                 fs::read_to_string(path).expect("Something went wrong reading the config file");
             match from_str(&contents) {
                 Ok(config) => config,
-                Err(_) => Default::default(),
+                Err(e) => {
+                  println!("Failed to parse config file: {}", &e);
+                  Default::default()
+                }
             }
         } else {
             Default::default()
@@ -71,6 +74,7 @@ pub enum Action {
     None,
     Remove,
     Scramble,
+    Replace { replacement: String },
     Exec { command_pattern: String },
 }
 

@@ -60,6 +60,7 @@ fn watch_clipboard(event_sink: druid::ExtEventSink) {
             let curr = String::from_utf8_lossy(&curr);
             let mut curr = curr.trim_matches('\u{0}').trim().to_owned();
             if !curr.is_empty() && last != curr {
+                    dbg!(&actions);
                 for (regex, action) in actions.iter() {
                     if let Some(_) = regex.find(&curr) {
                         match action {
@@ -73,6 +74,16 @@ fn watch_clipboard(event_sink: druid::ExtEventSink) {
                                     .map(char::from)
                                     .collect();
                                 curr = regex.replace_all(&curr, &s[..]).to_string();
+                                clipboard.store(
+                                    clipboard.setter.atoms.clipboard,
+                                    clipboard.setter.atoms.utf8_string,
+                                    curr.clone().as_bytes(),
+                                );
+                            }
+                            (true, Action::Replace { replacement }) => {
+                                curr = regex.replace_all(&curr, &replacement[..]).to_string();
+                                dbg!("Replacing...");
+                                dbg!(&curr);
                                 clipboard.store(
                                     clipboard.setter.atoms.clipboard,
                                     clipboard.setter.atoms.utf8_string,
